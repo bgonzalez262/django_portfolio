@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
     <!-- End CDN's---- -->
 
     <!-- Static---- -->
-    {% load static %}
+   
     <link rel="stylesheet" type="text/css" href="{% static 'drinks/styles.css' %}">
     <!-- End Static---- -->
 
@@ -59,13 +60,45 @@
       </div>
 
 </div>
+<!-- main body -->
+<div class="main-bod">
+<div class="search-form">
+  <form action="{% url 'drinks:search' %}" method="POST" >
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name of Drink</label>
+    <input type="text" class="form-control" name="drink" placeholder="Type the name of the drink you want to search for.">
+ 
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
+</div>
+<!-- cards -->
+<div class="cards">
+{% for drink in drinks %}
+<div class="card" style="width: 18rem;">
+  <img src="{{drink.strDrinkThumb}}/preview" alt="">
+  <div class="card-body">
+    <h5 class="card-title">{{drink.strDrink}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  {% for ingredient in drink.ingredients %}
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{ingredient}}</li>
+  </ul>
+  {% endfor %}
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div>
 
 
-</script>  
 </body>
 </html>
 
     
-            
-
 
