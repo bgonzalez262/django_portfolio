@@ -1,5 +1,5 @@
 body {
-    background-color: red !important;
+    background-color: rgba(90,119,168,.4) !important;
 }
 .search-form{
     display: flex;
@@ -20,4 +20,36 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+}
+.card-scroll {
+    overflow:scroll;
+
+    height:400px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+.hero img{
+    width: 500px;
+}
+.footer{
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding-top:10px;
+    padding-bottom: auto;
+
 }

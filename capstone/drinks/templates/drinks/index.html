@@ -52,10 +52,13 @@
   </div>
 </nav>
 <div class="main-cust">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid hero">
         <div class="container">
           <h1 class="display-4">Expanding your world.</h1>
           <p class="lead">For those who want a unique menu.</p>
+        </div>
+        <div class="container">
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fbranch-clipart-6.jpg&f=1&nofb=1" alt="">
         </div>
       </div>
 
@@ -76,7 +79,7 @@
 <!-- cards -->
 <div class="cards">
 {% for drink in drinks %}
-<div class="card" style="width: 18rem;">
+<div class="card card-scroll" style="width: 18rem;">
   <img src="{{drink.strDrinkThumb}}/preview" alt="">
   <div class="card-body">
     <h5 class="card-title">{{drink.strDrink}}</h5>
@@ -96,7 +99,9 @@
 </div>
 </div>
 
-
+<footer class="footer bg-dark">
+  <h5>&copyBrandon Gonzalez</h4>
+</footer>
 </body>
 </html>
 
